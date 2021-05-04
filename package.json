@@ -1,0 +1,34 @@
+{
+  "name": "idea",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smitsunori/idea.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smitsunori/idea/issues"
+  },
+  "homepage": "https://github.com/smitsunori/idea#readme",
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "babel-loader": "^8.2.2",
+    "browser-sync": "^2.26.14",
+    "gulp": "^4.0.2",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "p5": "^1.3.1",
+    "webpack": "^5.35.0",
+    "webpack-stream": "^6.1.2"
+  }
+}
