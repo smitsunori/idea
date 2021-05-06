@@ -5,9 +5,6 @@ import p5 from 'p5';
 const sm = [];
 
 sm.updateWindowSize = () => {
-
-	
-	
 	
 }
 sm.updateWindowSize();
@@ -32,24 +29,13 @@ const sketch = (p) => {
 
 	p.setup = () => {
 		p.createCanvas(windowWidth,windowHeight);
+		//p.background(0);
+		
+		
 	}
-	let posX = 0,
-			posY = 0;
-	const rectW = 120,
-				rectH = 120;
+
 	p.draw = () => {
-		p.background(255);
-		
-		p.fill(111);
-		p.strokeWeight(0)
-		p.rect(posX, posY, rectW, rectH);
-		
-		posX += 8;
-		posY += 2;
-		if(posX > windowWidth || posY > windowHeight){
-			posX = 0;
-			posY = 0;
-		}
+		p.ellipse(100, 100, 100, 100);
 	}
 
 }
