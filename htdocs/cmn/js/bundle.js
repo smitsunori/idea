@@ -1,10 +1,10 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/js/main.js":
-/*!************************!*\
-  !*** ./src/js/main.js ***!
-  \************************/
+/***/ "./src/js/01.js":
+/*!**********************!*\
+  !*** ./src/js/01.js ***!
+  \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -12,11 +12,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js");
 /* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);
 
-var sm = [];
-
-sm.updateWindowSize = function () {};
-
-sm.updateWindowSize();
 
 var sketch = function sketch(p) {
   var windowWidth, windowHeight;
@@ -34,15 +29,271 @@ var sketch = function sketch(p) {
   });
 
   p.setup = function () {
-    p.createCanvas(windowWidth, windowHeight); //p.background(0);
+    p.createCanvas(windowWidth, windowHeight);
+    p.stroke(200); //p.fill('rgba(220, 220, 220, .5)');
+    //console.log(p.width/2);
   };
 
+  var strokeWeightNum = 1,
+      gaining = true;
+  var speed = 1;
+
   p.draw = function () {
-    p.ellipse(100, 100, 100, 100);
+    p.background(255);
+    p.smooth();
+    p.strokeWeight(10);
+    p.fill(255);
+    p.ellipse(p.width / 6, p.height / 3, p.height / 2, p.height / 2);
+    p.strokeWeight(10);
+    p.fill(200);
+    p.ellipse(p.width * 0.5, p.height / 2, p.height / 1.5, p.height / 1.5);
+    /*
+    p.strokeWeight(strokeWeightNum);
+    //console.log(strokeWeightNum )
+    if(strokeWeightNum > p.height/2){
+    	gaining = false;
+    } else if(strokeWeightNum < 1){
+    	gaining = true;
+    }
+    	if(gaining){
+    	strokeWeightNum+=speed;
+    } else {
+    	strokeWeightNum-=speed;
+    }*/
   };
 };
 
-new (p5__WEBPACK_IMPORTED_MODULE_0___default())(sketch);
+if (document.querySelector('body').classList.contains('01')) {
+  new (p5__WEBPACK_IMPORTED_MODULE_0___default())(sketch);
+}
+
+/***/ }),
+
+/***/ "./src/js/02.js":
+/*!**********************!*\
+  !*** ./src/js/02.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js");
+/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var sketch = function sketch(p) {
+  var windowWidth, windowHeight;
+  var centerX, centerY;
+
+  var setCanvasSize = function setCanvasSize() {
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+  };
+
+  setCanvasSize();
+  window.addEventListener('resize', function () {
+    setCanvasSize(); //console.log('resize')
+
+    p.resizeCanvas(windowWidth, windowHeight);
+    centerX = p.width / 2, centerY = p.height / 2;
+  });
+
+  p.setup = function () {
+    p.createCanvas(windowWidth, windowHeight);
+    centerX = p.width / 2, centerY = p.height / 2; //p.size(500, 200);
+
+    p.smooth();
+    p.background(230);
+    p.stroke(130, 0, 0, 255);
+    p.strokeWeight(1);
+    p.line(centerX - 70, centerY - 70, centerX + 70, centerY + 70);
+    p.line(centerX + 70, centerY - 70, centerX - 70, centerY + 70);
+    p.stroke(0, 125);
+    p.strokeWeight(6);
+    p.fill(255, 255); //p.noFill();
+
+    p.noStroke();
+    var rectSize = 50;
+    p.rect(centerX, centerY, rectSize, rectSize, 8);
+    p.fill(0, 255);
+    p.rect(centerX - rectSize, centerY - rectSize, rectSize, rectSize, 8);
+  };
+};
+
+if (document.querySelector('body').classList.contains('02')) {
+  console.log('02');
+  new (p5__WEBPACK_IMPORTED_MODULE_0___default())(sketch);
+}
+
+/***/ }),
+
+/***/ "./src/js/03.js":
+/*!**********************!*\
+  !*** ./src/js/03.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js");
+/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var sketch = function sketch(p) {
+  var windowWidth, windowHeight;
+  var centerX, centerY;
+
+  var setCanvasSize = function setCanvasSize() {
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+  };
+
+  setCanvasSize();
+  window.addEventListener('resize', function () {
+    setCanvasSize(); //console.log('resize')
+
+    p.resizeCanvas(windowWidth, windowHeight);
+    centerX = p.width / 2, centerY = p.height / 2;
+  });
+  var diam = 10;
+
+  p.setup = function () {
+    var x = addNumbers(1, 2);
+    console.log(x);
+    p.createCanvas(windowWidth, windowHeight);
+    centerX = p.width / 2, centerY = p.height / 2; //p.size(500, 200);
+
+    p.smooth();
+    p.background(180);
+    p.stroke(0);
+    p.strokeWeight(5);
+    p.fill(255, 50);
+  };
+
+  var addNumbers = function addNumbers(a, b) {
+    var returnvalue = a + b;
+    return returnvalue;
+  };
+
+  p.draw = function () {
+    if (diam <= 400) {
+      p.background(180);
+      p.ellipse(centerX, centerY, diam, diam);
+      diam += 10;
+    }
+  };
+};
+
+if (document.querySelector('body').classList.contains('03')) {
+  console.log('03');
+  new (p5__WEBPACK_IMPORTED_MODULE_0___default())(sketch);
+}
+
+/***/ }),
+
+/***/ "./src/js/04.js":
+/*!**********************!*\
+  !*** ./src/js/04.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js");
+/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var sketch = function sketch(p) {
+  var windowWidth, windowHeight;
+  var centerX, centerY;
+
+  var setCanvasSize = function setCanvasSize() {
+    windowWidth = window.innerWidth;
+    windowHeight = window.innerHeight;
+  };
+
+  setCanvasSize();
+  window.addEventListener('resize', function () {
+    setCanvasSize(); //console.log('resize')
+
+    p.resizeCanvas(windowWidth, windowHeight);
+    centerX = p.width / 2, centerY = p.height / 2;
+  });
+  var diam = 10;
+
+  p.setup = function () {
+    p.createCanvas(windowWidth, windowHeight);
+    centerX = p.width / 2, centerY = p.height / 2;
+    p.background(180);
+    p.stroke(0);
+    p.strokeWeight(1);
+    p.fill(255, 25);
+  };
+
+  p.draw = function () {
+    if (diam <= 400) {
+      //p.background(180);
+      p.ellipse(centerX, centerY, diam, diam);
+      diam += 10;
+    }
+  };
+};
+
+if (document.querySelector('body').classList.contains('04')) {
+  console.log('04');
+  new (p5__WEBPACK_IMPORTED_MODULE_0___default())(sketch);
+}
+
+/***/ }),
+
+/***/ "./src/js/05.js":
+/*!**********************!*\
+  !*** ./src/js/05.js ***!
+  \**********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! p5 */ "./node_modules/p5/lib/p5.min.js");
+/* harmony import */ var p5__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(p5__WEBPACK_IMPORTED_MODULE_0__);
+
+
+var sketch = function sketch(p) {
+  var centerX = p.width / 2,
+      centerY = p.height / 2;
+  var diam = 10;
+
+  var initialSetUp = function initialSetUp() {
+    p.createCanvas(p.windowWidth, p.windowHeight);
+    p.background(180);
+    p.strokeWeight(4);
+    p.strokeCap(p.SQUARE);
+
+    for (var h = 10; h <= p.height - 15; h += 10) {
+      p.stroke(0, 255 - h);
+      p.line(10, h, p.width - 20, h);
+      p.stroke(255, h);
+      p.line(10, h + 4, p.width - 20, h + 4);
+    }
+  };
+
+  p.setup = function () {
+    initialSetUp();
+  };
+
+  p.windowResized = function () {
+    p.resizeCanvas(p.windowWidth, p.windowHeight);
+    centerX = p.width / 2, centerY = p.height / 2;
+    console.log(p.windowWidth);
+    console.log(p.windowHeight);
+    initialSetUp();
+  };
+};
+
+if (document.querySelector('body').classList.contains('05')) {
+  console.log('05');
+  new (p5__WEBPACK_IMPORTED_MODULE_0___default())(sketch);
+}
 
 /***/ }),
 
@@ -144,7 +395,15 @@ var __webpack_exports__ = {};
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
-__webpack_require__(/*! ./main.js */ "./src/js/main.js");
+__webpack_require__(/*! ./01.js */ "./src/js/01.js");
+
+__webpack_require__(/*! ./02.js */ "./src/js/02.js");
+
+__webpack_require__(/*! ./03.js */ "./src/js/03.js");
+
+__webpack_require__(/*! ./04.js */ "./src/js/04.js");
+
+__webpack_require__(/*! ./05.js */ "./src/js/05.js");
 })();
 
 /******/ })()
